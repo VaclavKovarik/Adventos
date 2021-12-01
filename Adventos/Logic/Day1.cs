@@ -12,7 +12,7 @@ namespace Adventos.Logic
 
         public Day1()
         {
-            _units = FileUtils.ReadFile("dayone.txt").Select(x => int.Parse(x)).ToArray();
+            _units = FileUtils.ReadFile("Day1.txt").Select(x => int.Parse(x)).ToArray();
         }
 
         public void Process()
