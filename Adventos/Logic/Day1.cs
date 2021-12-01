@@ -8,11 +8,11 @@ namespace Adventos.Logic
 {
     class Day1
     {
-        private readonly int[] _entries;
+        private readonly int[] _units;
 
         public Day1()
         {
-            _entries = FileUtils.ReadFile("dayone.txt").Select(x => int.Parse(x)).ToArray();
+            _units = FileUtils.ReadFile("dayone.txt").Select(x => int.Parse(x)).ToArray();
         }
 
         public void Process()
@@ -23,17 +23,17 @@ namespace Adventos.Logic
 
         private int GetIncreases()
         {
-            return GetIncreases(_entries);
+            return GetIncreases(_units);
         }
 
         private int GetIncreases(int[] entries)
         {
-            return entries.Select((x, i) => i < entries.Length - 1 && entries[i + 1] > entries[i]).Count(x => x);
+            return entries.Select((_, i) => i < entries.Length - 1 && entries[i + 1] > entries[i]).Count(x => x);
         }
 
         private int GetGroupedIncreases()
         {
-            return GetIncreases(_entries.Select((x, i) => i < _entries.Length - 2 ? _entries[i..(i + 3)].Sum() : 0).ToArray());
+            return GetIncreases(_units.Select((_, i) => i < _units.Length - 2 ? _units[i..(i + 3)].Sum() : 0).ToArray());
         }
     }
 }
