@@ -16,5 +16,10 @@ namespace Adventos
         {
             return File.ReadAllText($"Input/{filename}");
         }
+        public static List<string> ReadAsList(string filename)
+        {
+            var logFile = File.ReadAllLines($"Input/{filename}");
+            return new List<string>(logFile);
+        }
     }
 }
