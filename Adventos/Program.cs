@@ -22,6 +22,10 @@ namespace Adventos
                         var report2 = new Day2();
                         report2.Process();
                         break;
+                    case 3:
+                        var report3 = new Day3();
+                        report3.Process();
+                        break;
                     case 0:
                         Environment.Exit(0);
                         break;
